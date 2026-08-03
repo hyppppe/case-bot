@@ -57,6 +57,7 @@ function renderReelItem(item) {
   const color = rarityColor(item.rarity);
   const div = document.createElement("div");
   div.className = "reel-item";
+  div.dataset.rarity = item.rarity;
   div.style.borderColor = color;
   div.innerHTML = `
     <div class="reel-item-icon" style="background:${color}33"></div>
