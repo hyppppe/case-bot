@@ -308,4 +308,5 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .reel { transition: none !important; }
   .lever:active:not(:disabled) { transform: none; }
+  .reel-item[data-rarity="jackpot"] { animation: none; }
 }
