@@ -4,13 +4,15 @@ tg?.expand();
 
 // Должно совпадать с items.py на бэкенде — здесь используется только
 // для "прокрутки" ленты и таблицы шансов. Итог всегда решает сервер.
+// weight — в сотых долях процента (4500 = 45.00%), как и на бэкенде.
 const ITEMS = [
-  { name: "Обычный болтик",      value: 10,   rarity: "common",    weight: 45 },
-  { name: "Стальной ключ",       value: 25,   rarity: "uncommon",  weight: 25 },
-  { name: "Серебряный жетон",    value: 60,   rarity: "rare",      weight: 15 },
-  { name: "Золотая монета",      value: 150,  rarity: "epic",      weight: 8  },
-  { name: "Бриллиант",           value: 400,  rarity: "legendary", weight: 5  },
-  { name: "Мифический артефакт", value: 1500, rarity: "mythic",    weight: 2  },
+  { name: "Обычный болтик",      value: 10,    rarity: "common",    weight: 4500 },
+  { name: "Стальной ключ",       value: 25,    rarity: "uncommon",  weight: 2500 },
+  { name: "Серебряный жетон",    value: 60,    rarity: "rare",      weight: 1500 },
+  { name: "Золотая монета",      value: 150,   rarity: "epic",      weight: 800  },
+  { name: "Бриллиант",           value: 400,   rarity: "legendary", weight: 500  },
+  { name: "Мифический артефакт", value: 1500,  rarity: "mythic",    weight: 200  },
+  { name: "Джекпот",             value: 50000, rarity: "jackpot",   weight: 1    },
 ];
 
 const RARITY_COLOR_VAR = {
@@ -20,6 +22,7 @@ const RARITY_COLOR_VAR = {
   epic: "--epic",
   legendary: "--legendary",
   mythic: "--mythic",
+  jackpot: "--jackpot",
 };
 
 const ITEM_WIDTH = 120; // reel-item width (100) + margins (10+10)
