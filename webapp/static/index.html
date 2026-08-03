@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Хранилище</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+
+    <header class="gauge-bar">
+      <div class="gauge">
+        <span class="gauge-label">баланс</span>
+        <span class="gauge-value"><span id="balance">···</span> <span class="unit">монет</span></span>
+      </div>
+    </header>
+
+    <main class="vault-screen">
+      <h1 class="vault-title">ХРАНИЛИЩЕ №1</h1>
+      <p class="vault-sub">Один рычаг. Шесть исходов. Решай сам.</p>
+
+      <div class="reel-frame">
+        <div class="rivet tl"></div>
+        <div class="rivet tr"></div>
+        <div class="rivet bl"></div>
+        <div class="rivet br"></div>
+        <div class="needle"></div>
+        <div class="reel-window">
+          <div class="reel" id="reel"></div>
+        </div>
+      </div>
+
+      <button id="openBtn" class="lever" disabled>
+        <span class="lever-text">ПОТЯНУТЬ</span>
+        <span class="lever-cost"><span id="cost">···</span> монет</span>
+      </button>
+
+      <div class="result" id="result" aria-live="polite"></div>
+    </main>
+
+    <p class="odds-link" id="oddsToggle">шансы выпадения</p>
+    <div class="odds-panel" id="oddsPanel"></div>
+  </div>
+
+<script src="app.js"></script>
+</body>
+</html>
