@@ -1,15 +1,16 @@
 import random
 
-# Содержимое кейса. weight — относительный шанс выпадения (сумма = 100,
-# удобно читать как проценты). value — сколько монет зачисляется игроку.
-# Можно менять баланс value/weight, чтобы регулировать отдачу кейса (RTP).
+# Содержимое кейса. weight измеряется в сотых долях процента (базисных
+# пунктах / 100), т.е. 4500 = 45.00%. Так можно точно задать джекпоту шанс
+# 0.01%, оставаясь в целых числах. value — сколько монет зачисляется игроку.
 ITEMS = [
-    {"name": "Обычный болтик",     "value": 10,   "weight": 45, "rarity": "common"},
-    {"name": "Стальной ключ",      "value": 25,   "weight": 25, "rarity": "uncommon"},
-    {"name": "Серебряный жетон",   "value": 60,   "weight": 15, "rarity": "rare"},
-    {"name": "Золотая монета",     "value": 150,  "weight": 8,  "rarity": "epic"},
-    {"name": "Бриллиант",          "value": 400,  "weight": 5,  "rarity": "legendary"},
-    {"name": "Мифический артефакт","value": 1500, "weight": 2,  "rarity": "mythic"},
+    {"name": "Обычный болтик",     "value": 10,    "weight": 4500, "rarity": "common"},
+    {"name": "Стальной ключ",      "value": 25,    "weight": 2500, "rarity": "uncommon"},
+    {"name": "Серебряный жетон",   "value": 60,    "weight": 1500, "rarity": "rare"},
+    {"name": "Золотая монета",     "value": 150,   "weight": 800,  "rarity": "epic"},
+    {"name": "Бриллиант",          "value": 400,   "weight": 500,  "rarity": "legendary"},
+    {"name": "Мифический артефакт","value": 1500,  "weight": 200,  "rarity": "mythic"},
+    {"name": "Джекпот",            "value": 50000, "weight": 1,    "rarity": "jackpot"},  # 0.01%
 ]
 
 
