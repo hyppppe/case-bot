@@ -87,7 +87,7 @@ function renderOdds() {
           <span class="odds-name">
             <span class="odds-dot" style="background:${color}"></span>${item.name}
           </span>
-          <span class="odds-chance">${item.weight}% · ${item.value} 💰</span>
+          <span class="odds-chance">${(item.weight / 100).toFixed(2)}% · ${item.value} 💰</span>
         </div>
       `;
     })
