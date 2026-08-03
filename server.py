@@ -50,9 +50,16 @@ async def handle_spin(request: web.Request) -> web.Response:
     return web.json_response({"prize": prize, "balance": new_balance})
 
 
+async def handle_index(request: web.Request) -> web.Response:
+    # add_static ниже не отдаёт index.html на "/" сам по себе, поэтому корень
+    # обслуживаем явным обработчиком.
+    return web.FileResponse(STATIC_DIR / "index.html")
+
+
 def create_app() -> web.Application:
     app = web.Application()
     app.router.add_post("/api/me", handle_me)
     app.router.add_post("/api/spin", handle_spin)
+    app.router.add_get("/", handle_index)
     app.router.add_static("/", path=STATIC_DIR, name="static", show_index=False)
     return app
