@@ -163,12 +163,14 @@ async function spin() {
   setTimeout(() => {
     balanceEl.textContent = data.balance;
     const net = data.prize.value - spinCost;
-    resultEl.innerHTML = `Выпало: <b>${data.prize.name}</b> · ${data.prize.value} 💰 ${net >= 0 ? "🎉" : ""}`;
+    const isJackpot = data.prize.rarity === "jackpot";
+    resultEl.innerHTML = isJackpot
+      ? `🎰 ДЖЕКПОТ! <b>${data.prize.name}</b> · ${data.prize.value} 💰 🎉🎉🎉`
+      : `Выпало: <b>${data.prize.name}</b> · ${data.prize.value} 💰 ${net >= 0 ? "🎉" : ""}`;
     tg?.HapticFeedback?.notificationOccurred(net >= 0 ? "success" : "warning");
     spinning = false;
     openBtn.disabled = false;
   }, 4400);
-}
 
 openBtn.addEventListener("click", spin);
 renderOdds();
