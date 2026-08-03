@@ -199,7 +199,14 @@ body {
   color: var(--brass);
   font-weight: 600;
 }
+.reel-item[data-rarity="jackpot"] {
+  animation: jackpot-glow 1.1s ease-in-out infinite;
+}
 
+@keyframes jackpot-glow {
+  0%, 100% { box-shadow: 0 0 6px rgba(244, 197, 66, 0.35); }
+  50% { box-shadow: 0 0 16px rgba(244, 197, 66, 0.85); }
+}
 /* ---------- lever button ---------- */
 .lever {
   width: 100%;
